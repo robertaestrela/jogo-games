@@ -1,0 +1,67 @@
+/* Jogô.games · tokens do DS EstrelaGames (Rjx31bgpOt4m1U8DVKyWtd · modo Jogô.games), valores resolvidos 1:1 */
+:root{
+  color-scheme: dark;
+  /* background */
+  --bg-default:#180229; --bg-subtle:#220c34; --bg-strong:#2f0f48; --bg-raised:#391156; --bg-inset:#010101; --bg-highlight:#ffffff14; --bg-chrome:#220c34; --bg-divider:#391156; --bg-band:#00000052;
+  --bga-default-50:#18022980; --bga-default-75:#180229bf; --bga-subtle-50:#220c3480; --bga-subtle-75:#220c34bf;
+  --bga-strong-25:#2f0f4840; --bga-strong-50:#2f0f4880; --bga-strong-75:#2f0f48bf;
+  --bga-secondary-16:#ffc13429; --bga-secondary-32:#ffc13452; --bga-accent-12:#ffc8411f;
+  /* border */
+  --border-muted:#ffffff14; --border-default:#2f0f48; --border-strong:#4a256a; --border-focus:#f4a900;
+  --border-hl-top:#ffffff29; --border-gold-top:#ffe4b8e5; --border-gold-bottom:#f4a9005c;
+  /* text */
+  --text-default:#f6e7ff; --text-muted:#c7a0ef; --text-link:#ffc134; --text-subtle:#724d95; --text-disabled:#583379;
+  --text-brand:#ffc134; --text-success:#52de7e; --text-error:#ff6b6e; --text-prize:#ffc841;
+  --text-on-color:#ffffff; --text-on-color-muted:#ffffffd9; --text-on-color-subtle:#ffffffb2; --text-on-light:#180229;
+  /* system */
+  --sys-info:#ffb403; --sys-success:#2cc160; --sys-success-strong:#8cf0a9; --sys-warning:#ffbe2e; --sys-error:#ef4452;
+  --sysa-success-25:#2cc16040; --sysa-error-25:#ef445240; --sysa-info-25:#3b74f540;
+  --notification-error:#ef4452;
+  /* effects */
+  --hl-subtle:#ffffff29; --hl:#ffffff52; --hl-strong:#ffffff7a;
+  --shadow-faint:#0000001f; --shadow-subtle:#0000003d; --shadow:#00000066; --shadow-strong:#00000080;
+  --glow-info:#f4a90052; --glow-accent:#ffbe2e52; --glow-success:#52de7ea3; --glow-gold:#ffc13452; --glow-blue:#ffc134; --glow-red:#ff6b6e;
+  /* surfaces */
+  --surface-card-top:#220c34; --surface-card-bottom:#180229; --surface-elevated-top:#391156; --surface-elevated-bottom:#220c34;
+  /* buttons */
+  --btn-primary-top:#f4a900; --btn-primary-bg:#8c6622; --btn-secondary-border:#ffb403;
+  --btn-disabled-top:#391156; --btn-disabled-bg:#391156; --btn-disabled-text:#583379;
+  /* tabs */
+  --tab-default-text:#c7a0ef; --tab-container:#2f0f48; --input-border:#2f0f48;
+  --tab-padrao:#f4a900; --tab-padrao-tint:#f4a9003d; --tab-rosa:#e93d82; --tab-rosa-tint:#e93d823d;
+  /* games */
+  --game-truco:#e5484d; --game-paulista:#3b74f5; --game-cacheta:#8752f2; --game-tranca:#2cc160; --game-buraco:#1f9a4a;
+  --game-poker:#0fa968; --game-sinuca:#2fa35a; --game-todos:#ffb403; --game-domino:#14b8a6; --game-dama:#f76b15; --game-xadrez:#5b6cff;
+  --game-paulista-tint:#3b74f53d; --game-truco-tint:#e5484d3d; --game-cacheta-tint:#8752f23d; --game-buraco-tint:#1f9a4a3d; --game-poker-tint:#0fa9683d; --game-sinuca-tint:#2fa35a3d;
+  /* crew */
+  --crew-engenheiro:#4fb3ff; --crew-comandante:#f5c542; --crew-piloto:#ff5a36; --crew-navegador:#e86bff; --crew-explorador:#4dffb8;
+  --crew-bar:#ff9f43; --crew-reis:#34d399; --crew-nobru:#3d8bff; --crew-inhui:#ff4fb0;
+  /* stake / table */
+  --stake-padrao-top:#5a3e05; --stake-padrao-bottom:#2e2008; --stake-iniciante-top:#1f9a4a; --stake-iniciante-bottom:#1f502c;
+  --table-card-top:#1f5a4a; --table-card-bottom:#0f2e2a; --table-stake:#ffc841;
+  --plus-bg:#52de7e; --plus-icon:#180229;
+  /* cards */
+  --card-face:#ffffff; --card-border:#9ea2a4; --suit-red:#c72c3d; --suit-black:#141922; --back-top:#6e5019; --back-bottom:#3f2700;
+  /* seat timer */
+  --seat-timer-track:#ffffff1f; --seat-timer:#ffb403;
+  /* type */
+  --f-display:"Sora", "Inter", system-ui, sans-serif;
+  --f-ui:"Inter", system-ui, -apple-system, sans-serif;
+  --f-call:"Industry", "Sora", sans-serif;
+  /* marca · Jogô.games (sobrescreve) */
+  --back-top:#4a256a; --back-bottom:#2f0f48; --btn-primary-text:#180229; --btn-primary-bg:#ffc134; --crew-live:#B45CFF; --crew-laje:#FF7F50; --crew-portaria:#3DDC84;
+}
+/* estilos de texto do DS */
+.t-d3xl{font:700 64px/1.2 var(--f-display);letter-spacing:-.02em}
+.t-d2xl{font:700 48px/1.2 var(--f-display);letter-spacing:-.02em}
+.t-dxl{font:700 40px/1.2 var(--f-display);letter-spacing:-.02em}
+.t-dl{font:700 32px/1.2 var(--f-display);letter-spacing:-.02em}
+.t-dm{font:700 24px/1.2 var(--f-display);letter-spacing:-.01em}
+.t-ds{font:700 20px/1.2 var(--f-display);letter-spacing:-.01em}
+.t-dxs{font:600 16px/1.2 var(--f-display)}
+.t-d2xs{font:600 14px/1.2 var(--f-display)}
+.t-d3xs{font:600 12px/1.2 var(--f-display)}
+.t-hm{font:700 20px/1.2 var(--f-ui)}
+.t-ll{font:500 16px/1 var(--f-ui)} .t-lm{font:500 14px/1 var(--f-ui)} .t-ls{font:500 12px/1 var(--f-ui)} .t-lxs{font:500 10px/1 var(--f-ui)} .t-l2xs{font:500 8px/1 var(--f-ui)}
+.t-link{font:700 12px/1.5 var(--f-ui)}
+.t-p2xl{font:400 20px/1.5 var(--f-ui)} .t-pm{font:400 14px/1.5 var(--f-ui)} .t-ps{font:400 12px/1.5 var(--f-ui)}
