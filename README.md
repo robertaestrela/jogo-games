@@ -1,6 +1,6 @@
 # Jogô.games · protótipo navegável
 
-Versão da marca Jogô.games gerada a partir do protótipo EstrelaGames (`egames-tools/brandify.py`): cores do modo Jogô.games, logo, header, verso das cartas, vídeo de boas-vindas e mesa da sinuca na cor da marca com o logo ao centro. Marca sem jogadores: entra com os personagens de Todas as marcas (Magia do bar liberado + famílias do Pac do Baralho na Loja).
+Versão da marca Jogô.games gerada a partir do protótipo EstrelaGames (`egames-tools/brandify.py`): cores do modo Jogô.games, logo, header, verso das cartas, vídeo de boas-vindas e mesa da sinuca na cor da marca com o logo ao centro. Marca sem jogadores: entra com as famílias da página Skins (Magia do bar liberado).
 
 Protótipo mobile do **Jogô.games** (redesign *Apple Gamer Style*), fiel ao Figma e ao Design System Jogô.games. Todos os jogos liberados funcionam contra **bots**:
 
@@ -13,7 +13,7 @@ Protótipo mobile do **Jogô.games** (redesign *Apple Gamer Style*), fiel ao Fig
 | Poker | Texas Hold'em Sit & Go · 1x1 e mesa de 6 |
 | Sinuca | Bola 8 · 1x1 em mesa 3D (Brasileira em breve) |
 
-**Fluxo:** o app abre no cadastro (boas-vindas → celular → código → senha → apelido), **sem personagem**. A Loja desbloqueia os pacotes de skins (Magia do bar em destaque, Live do Baralho, Resenha da Laje, Plantão da Portaria, Magia do bar, Reis do baralho); ao embarcar, a aba **Jogos** vira a Home com o vídeo do personagem e as escolhas (avatar, mesa, baralho) passam para todos os jogos.
+**Fluxo:** o app abre no cadastro (boas-vindas → celular → código → senha → apelido), **sem personagem**. A Loja desbloqueia os pacotes de skins (Magia do bar grátis, famílias da página Skins, Magia do bar, ); ao embarcar, a aba **Jogos** vira a Home com o vídeo do personagem e as escolhas (avatar, mesa, baralho) passam para todos os jogos.
 
 **Diamantes:** moeda da Loja, só cosmético (skins, baralhos, molduras, efeitos, troca de nome e de foto) e nunca entra em partida. É o único pagamento dentro do app: o saldo de diamantes fica no topo da Loja e o + abre a página Diamantes (50 +8 · 195 +15 · 960 +40 · 4.500 +100, por R$ 6,90 · 29,90 · 129,90 · 599,90). A confirmação é a tela da App Store / Google Play (no protótipo, uma referência). Pacote de skins = 70 diamantes; sem saldo, o Comprar abre a página Diamantes.
 

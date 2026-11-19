@@ -32,7 +32,7 @@ const F = Object.assign({
   ]
 }, SS.get('eg.fichas') || {});
 const save = () => SS.set('eg.fichas', F);
-const CREW = {engenheiro: 'var(--crew-engenheiro)', comandante: 'var(--crew-comandante)', piloto: 'var(--crew-piloto)', navegador: 'var(--crew-navegador)', explorador: 'var(--crew-explorador)', bar: 'var(--crew-bar)', reis: 'var(--crew-reis)', live: 'var(--crew-live)', laje: 'var(--crew-laje)', portaria: 'var(--crew-portaria)'};
+const CREW = {engenheiro: 'var(--crew-engenheiro)', comandante: 'var(--crew-comandante)', piloto: 'var(--crew-piloto)', navegador: 'var(--crew-navegador)', explorador: 'var(--crew-explorador)', bar: 'var(--crew-bar)', reis: 'var(--crew-reis)', laje: 'var(--crew-laje)', portaria: 'var(--crew-portaria)', live: 'var(--crew-live)', feira: 'var(--crew-feira)', navalha: 'var(--crew-navalha)', varzea: 'var(--crew-varzea)', oficina: 'var(--crew-oficina)', posto: 'var(--crew-posto)', fliper: 'var(--crew-fliper)', grau: 'var(--crew-grau)', palpite: 'var(--crew-palpite)'};
 const crewColor = () => F.crew === 'gamer' ? (F.g === 'ela' ? 'var(--crew-inhui)' : 'var(--crew-nobru)') : CREW[F.crew] || 'var(--border-strong)';
 const photo = () => !F.crew || F.crew === 'nenhum' ? A + 'ui/avatar_empty.webp' : `${A}photo/${F.crew}_${F.g}.webp`;
 const hav = (w, h) => `<span class="hav" style="--w:${w}px;--h:${h}px;--cc:${crewColor()}"><i class="gl"></i><span class="hx"><img src="${photo()}" alt=""></span><i class="on"></i></span>`;
@@ -110,7 +110,7 @@ const VIEW = {
         <small class="bnote">Fichas de bônus não podem ser sacadas.</small>
         <div class="acts">${btn('Comprar fichas', 'pri', 'l', 'data-a="buy"')}${btn('Sacar', 'sec', 'l', 'data-a="out"')}</div></section>
       ${limitsCard('Limites de hoje')}
-      <section class="banner"><img src="${A}art/pack-live-l.webp" alt=""><div class="gl"><span><b>Live do Baralho chegou</b><small>Pacote novo na Loja<span class="od"> do Jogô.games</span></small></span>${btn('Ver na Loja', 'sec', 's', 'data-a="back:loja"')}</div></section>
+      <section class="banner"><img src="${A}art/pack-portaria-l.webp" alt=""><div class="gl"><span><b>Seu Porteiro e Dona Síndica chegaram</b><small>Pacote novo na Loja<span class="od"> do Jogô.games</span></small></span>${btn('Ver na Loja', 'sec', 's', 'data-a="back:loja"')}</div></section>
       <section class="card help">${ic('headset')}<span class="tx"><small class="k">Suporte</small><b>Precisa de ajuda?</b><span>Dúvidas sobre compra, saque ou limites?<span class="od"> Fale com a gente pelo chat.</span></span></span>${btn('Abrir chat', 'sec', 's', 'data-a="help"')}</section>
       <section class="card txs"><div class="th"><b>Últimas transações</b><a href="#historico"><span class="od">Ver histórico completo</span><span class="om">Ver tudo</span> →</a></div>${txList(F.tx.slice(0, 3))}</section>
     </div>`;
