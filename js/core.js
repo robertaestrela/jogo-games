@@ -42,12 +42,20 @@ const PACKS = {
   fliper: {name: 'Lanzinho e Rayane', roles: ['fliper'], def: ['fliper', 'ele'], skins: 2, caption: 'Fliperama do Bairro · 2 skins', incl: 'Lanzinho e Rayane', family: 'Fliperama do Bairro', artL: 'pack-fliper-s', artS: 'pack-fliper-s', posL: 'center', posS: 'center', mesa: null, page: 'Escolha seu personagem'},
   grau: {name: 'Grauzinho e Juliete', roles: ['grau'], def: ['grau', 'ele'], skins: 2, caption: 'Turma do Grau · 2 skins', incl: 'Grauzinho e Juliete', family: 'Turma do Grau', artL: 'pack-grau-s', artS: 'pack-grau-s', posL: 'center', posS: 'center', mesa: null, page: 'Escolha seu personagem'},
   palpite: {name: 'Mestre do Palpite e Madrinha do Palpite', roles: ['palpite'], def: ['palpite', 'ele'], skins: 2, caption: 'Turma do Palpite · 2 skins', incl: 'Mestre do Palpite e Madrinha do Palpite', family: 'Turma do Palpite', artL: 'pack-palpite-s', artS: 'pack-palpite-s', posL: 'center', posS: 'center', mesa: null, page: 'Escolha seu personagem'},
-  assalto: {name: 'Jeff e Lúcia', roles: ['assalto'], def: ['assalto', 'ele'], skins: 2, caption: 'O Grande Assalto · 2 skins', incl: 'Jeff e Lúcia', family: 'O Grande Assalto', artL: 'pack-assalto-s', artS: 'pack-assalto-s', posL: 'center', posS: 'center', mesa: null, page: 'Escolha seu personagem'},
+  assalto: {name: 'Jeff e Lúcia', roles: ['assalto'], def: ['assalto', 'ele'], skins: 2, caption: 'O Grande Assalto · 2 skins', incl: 'Jeff e Lúcia', family: 'O Grande Assalto', artL: 'pack-assalto-s', artS: 'pack-assalto-s', posL: 'center', posS: 'center', mesa: 'assalto', deck: 'assalto', page: 'Escolha seu personagem'},
   estelar: {name: 'Estelar', roles: ['engenheiro', 'comandante', 'piloto', 'navegador', 'explorador'], def: ['navegador', 'ela'], skins: 10, caption: 'Tripulação espacial · 10 skins', incl: '5 tripulantes · Ele e Ela', artL: 'pack-estelar', artS: 'pack-estelar', posL: 'center 40%', posS: 'center 30%', mesa: null, page: 'Escolha seu tripulante'}
 };
 const PACK_ORDER = ['laje', 'portaria', 'magia', 'live', 'feira', 'navalha', 'varzea', 'oficina', 'posto', 'fliper', 'grau', 'palpite', 'assalto'];
 const packOf = c => c === 'gamer' ? 'nobru' : c === 'bar' ? 'magia' : c === 'reis' ? 'reis' : PACKS[c] ? c : 'estelar';
-const photo = (crew, g) => crew === 'nenhum' ? A + 'ui/avatar_empty.webp' : `${A}photo/${crew}_${g}.webp`;
+/* classes de skin (Loja por classe · Figma Loja › 9): a compra vale para a família toda (Ele + Ela) · subir de classe paga só a diferença */
+const CLS = [{k: 'comum', n: 'Comum', p: 4.9}, {k: 'rara', n: 'Rara', p: 9.9}, {k: 'mistica', n: 'Mística', p: 19.9}, {k: 'lendaria', n: 'Lendária', p: 39.9}];
+// famílias com arte própria por classe (palco, chamada e foto: assets/…/<crew>_<g>_<classe>) · as outras usam a mesma arte em todas as classes
+const TIER_ART = {bar: 3, assalto: 4};
+// classe que o jogador está usando (comprada ou escolhida ao embarcar) · null = arte padrão
+const wearLvl = c => { const id = packOf(c), w = (ST.wear || {})[id]; return w != null ? w : (ST.cls || {})[id] != null ? ST.cls[id] : null; };
+// sufixo da arte: t explícito (null = padrão) ou, sem t, a classe do próprio jogador quando o personagem é o dele
+const tierSfx = (c, t) => { if (t === undefined) t = c === ST.crew ? wearLvl(c) : null; return t != null && TIER_ART[c] > t ? '_' + CLS[t].k : ''; };
+const photo = (crew, g, t) => crew === 'nenhum' ? A + 'ui/avatar_empty.webp' : `${A}photo/${crew}_${g}${tierSfx(crew, t)}.webp`;
 
 /* ---------- jogos ---------- */
 // ordem da linha de jogos do lobby: Cacheta · Truco · Buraco · Poker · Sinuca (Tranca saiu do protótipo em 30/10)
@@ -84,7 +92,7 @@ const PEOPLE = [['dutra77', 'comandante', 'ele'], ['amanda.s', 'engenheiro', 'el
 const ST = {
   onboarded: false, nick: 'betinh4', phone: '', saldo: 1250, bonus: 35,
   game: 'truco', variant: 'Mineiro', trucoMode: '2x2', stake: 1,
-  crew: 'bar', g: 'ele', owned: {nobru: false, magia: true, reis: false, estelar: false, laje: false, portaria: false, live: false, feira: false, navalha: false, varzea: false, oficina: false, posto: false, fliper: false, grau: false, palpite: false, assalto: false}, pack: 'magia',
+  crew: 'bar', g: 'ele', owned: {nobru: false, magia: true, reis: false, estelar: false, laje: false, portaria: false, live: false, feira: false, navalha: false, varzea: false, oficina: false, posto: false, fliper: false, grau: false, palpite: false, assalto: false}, pack: 'magia', cls: {}, wear: {},
   mesaChoice: 'vermelha', mesaPaulista: 'azul', mesaPicked: false, deck: 'estrela', mic: false,
   fid: {ready: 12, week: 0}, // Bônus Fidelidade: o que está pronto pra resgatar e o que está juntando nesta semana (5% da taxa das mesas, limite R$ 50)
   unread: 2, reward: null, rewardsWon: 18, tourney: null, tPrev: null, training: false, room: null,
